@@ -1,6 +1,7 @@
 const spire = document.querySelector("#spirewidget");
 const accessToken = spire.getAttribute("accessToken");
 const widgetId = spire.getAttribute("widget");
+const liveURL = "https://fj-lite-node.herokuapp.com/graphql";
 
 
 
@@ -69,7 +70,7 @@ export const feedblocks = queryFetch(
 
 
   async function fetchWidget(query) {
-    const res = await fetch("https://fj-lite-node.herokuapp.com/graphql", {
+    const res = await fetch(liveURL, {
       method: "POST",
       mode: "no-cors",
    
@@ -88,7 +89,7 @@ export const feedblocks = queryFetch(
   //fj-lite-node.herokuapp.com
   
   async function queryFetch(query) {
-    const res = await fetch("https://fj-lite-node.herokuapp.com/graphql", {
+    const res = await fetch(liveURL, {
       method: "POST",
       mode: "no-cors",
       body: JSON.stringify({
@@ -103,7 +104,7 @@ export const feedblocks = queryFetch(
 
 
   export async function createFeedback(feedblockId, customerEmail, widgetName, rating, comment) {
-    const res = await fetch("https://fj-lite-node.herokuapp.com/graphql", {
+    const res = await fetch(liveURL, {
       method: "POST",
       mode: "no-cors",
   
